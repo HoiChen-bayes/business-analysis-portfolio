@@ -4,6 +4,16 @@
 
 [Portfolio home](README.md) · [Requirements and validation examples](01-earnings-evidence.md)
 
+## At a glance
+
+| Business problem | Earnings-event results were difficult to review without explicit date, eligibility and exception rules. |
+| --- | --- |
+| My contribution | Defined analytical rules, calculated returns, reconciled Excel/Python outputs and translated controls into requirements and test examples |
+| Original outputs | Research analysis and Excel workbook; a BA design pack with 20 requirements, 12 stories and 26 designed UAT cases |
+| Published outputs | This case, a workflow diagram, selected requirements, acceptance criteria and validation examples |
+| Recorded results | 25 companies; 193 collected events; 192 eligible events; 13 review flags; zero maximum Excel/Python reconciliation difference in the retained report |
+| Evidence boundary | Research validation was performed; organisational roles, approval processes and operating-model benefits were simulated. The original workbook and source code are not published in this repository. |
+
 ## The problem
 
 An earnings announcement date is not always the trading day on which its reaction should be measured. Results also become difficult to review when missing history, unusual price moves and calculation choices are hidden inside an analysis script.

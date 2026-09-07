@@ -4,6 +4,16 @@
 
 [Portfolio home](README.md) · [Rules, stories and test plan](02-furniture-evidence.md)
 
+## At a glance
+
+| Business problem | Customers could submit furniture combinations that could not be manufactured. |
+| --- | --- |
+| My contribution | Elicited manufacturing constraints, documented requirements and rules, and handed them to the technical team through Confluence and Jira |
+| Original outputs | Business requirements document, maintainable configuration table and rule-trigger reporting |
+| Historical outcome | Non-manufacturable orders fell from about 45 per month to fewer than 5 after implementation, as recorded in my experience account |
+| Published outputs | A newly reconstructed workflow, rule table, 3 user stories and 10 designed test scenarios |
+| Evidence boundary | The historical result belongs to the original work. The public products, rules and tests are synthetic examples; the tests have not been executed against the employer system. |
+
 ## The problem
 
 Custom-furniture customers can choose combinations of fabric, colour, size and accessories. A combination may look valid in an ordering interface but still be impossible to manufacture. Discovering that after order submission creates avoidable clarification, rework and disappointment.
@@ -13,6 +23,8 @@ This case explores how to validate a configuration before submission, explain th
 ## Context and my contribution
 
 The problem is informed by my part-time custom-furniture operations experience. In that work, I gathered constraints from product, production and supply-chain stakeholders, involved a factory process engineer, documented business rules in Excel and Confluence, and handed requirements to the technical team through Jira. I did not develop the ordering software.
+
+The original requirements work covered 120+ SKUs, 42 fabrics, 28 colours and 16 size bands. More than 18,000 theoretical combinations were filtered to approximately 3,200 manufacturable ones. After implementation, non-manufacturable orders fell from about 45 per month to fewer than five. These are historical figures from my retained experience account; employer records are not included in this public repository, and I do not attribute the result to my contribution alone.
 
 The artefacts published here were newly reconstructed for this portfolio in September 2026. All product names, constraints, example orders, priorities and test cases below are synthetic. They are not copied employer documents, an export of a live system or evidence of a new commercial implementation.
 
@@ -65,7 +77,7 @@ This is a proposed portfolio design. It does not depict a verified current emplo
 
 **Keep the first release narrow.** In this scenario, preventing known non-manufacturable combinations is a Must. More advanced alternatives and analytics can follow once the validation and change process are reliable.
 
-## What I would measure
+## How I would validate the reconstructed design
 
 | Measure | Definition | Use |
 | --- | --- | --- |
@@ -74,7 +86,7 @@ This is a proposed portfolio design. It does not depict a verified current emplo
 | Successful correction | Blocked sessions that submit a valid configuration / blocked sessions, within an agreed window | Tests whether the guidance helps customers recover |
 | Rule-maintenance lead time | Elapsed time from an agreed change request to a tested, effective rule | Evaluates maintainability |
 
-No baseline, target or achieved improvement is invented for this reconstructed case. These measures would need agreed definitions, suitable event logging and a measured baseline before benefits could be claimed.
+The historical order reduction above is separate from this new reconstruction. No baseline, target or measured improvement is claimed for the synthetic design. A new pilot would need agreed definitions, suitable event logging and its own measured baseline.
 
 ## What the case demonstrates
 
