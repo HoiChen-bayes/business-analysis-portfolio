@@ -6,7 +6,7 @@ I use analysis to clarify business problems, define workable requirements and ma
 
 MSc Business Analytics, Distinction — Bayes Business School. Microsoft Certified: Power BI Data Analyst Associate (PL-300).
 
-[Connect on LinkedIn](https://www.linkedin.com/in/hoichun-chen)
+[Read the portfolio on Notion](https://superficial-carob-4a3.notion.site/Hoi-Chun-Chen-Business-Analysis-Portfolio-3d419219729a800ba58ede758a0f0c50) · [Connect on LinkedIn](https://www.linkedin.com/in/hoichun-chen)
 
 ## Selected case studies
 
