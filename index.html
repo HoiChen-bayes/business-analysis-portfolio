@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AdventureWorks | Hoi's Analytics Portfolio</title>
+  <meta name="description" content="Explore ten Power BI report pages covering sales, products, markets and customer segmentation.">
+  <style>
+    :root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#152b3b;background:#f2f5f7;font-synthesis:none}
+    *{box-sizing:border-box}body{margin:0}button,a{touch-action:manipulation}button{font:inherit;cursor:pointer}a{color:inherit}
+    .app{display:grid;grid-template-columns:254px minmax(0,1fr);min-height:100vh}
+    aside{background:#102b3c;color:#e3edf2;padding:30px 18px;display:flex;flex-direction:column}
+    .brand{font-size:21px;font-weight:750;letter-spacing:-.6px;padding:0 12px}.brand small{display:block;color:#90b1c3;font-size:11px;letter-spacing:2px;font-weight:500;margin-top:9px;text-transform:uppercase}
+    nav{margin-top:38px}.group{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#86a8bb;padding:0 12px;margin:22px 0 8px}
+    .nav-button{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;color:#c5d7e2;text-align:left;padding:12px;border-radius:7px;margin:3px 0;font-size:13px;line-height:1.4}
+    .nav-button span{font-size:10px;color:#8eacbe}.nav-button:hover{background:#1c3c50}.nav-button[aria-current=page]{background:#d8f3ef;color:#123f3b;font-weight:650}.nav-button[aria-current=page] span{color:#477d77}
+    .aside-bottom{margin-top:auto;padding:36px 12px 0;color:#9ab6c6;font-size:12px;line-height:1.7}.aside-bottom a{text-decoration:none}
+    main{padding:30px 32px 22px;min-width:0}.topline{display:flex;justify-content:space-between;align-items:center;gap:16px;color:#617787;font-size:12px;letter-spacing:.2px}
+    .badge{border:1px solid #cddfdc;border-radius:30px;padding:7px 11px;background:#e9f4f0;color:#28685c;white-space:nowrap}
+    header{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin:28px 0 20px}h1{font-size:clamp(25px,2.5vw,36px);letter-spacing:-1.2px;margin:0 0 9px;font-weight:650}#description{color:#617787;line-height:1.6;font-size:14px;margin:0;max-width:680px}
+    .actions{display:flex;gap:8px;flex-shrink:0}.action{border:1px solid #d0dce3;border-radius:7px;padding:10px 13px;background:#fff;color:#284557;text-decoration:none;font-size:12px;white-space:nowrap}.action:hover{border-color:#487b91;background:#f5fafb}
+    .viewer{background:white;border:1px solid #dbe4e9;border-radius:11px;overflow:hidden;box-shadow:0 8px 30px #17344806}
+    .viewer-top{display:flex;justify-content:space-between;gap:14px;padding:13px 18px;border-bottom:1px solid #e5ecef;color:#536d7c;font-size:12px}.live-dot{display:inline-block;width:6px;height:6px;background:#168678;border-radius:50%;margin-right:7px}
+    iframe{display:block;width:100%;height:max(560px,calc(100vh - 290px));border:0;background:#fff}.viewer:fullscreen{border-radius:0;width:100%;height:100%}.viewer:fullscreen iframe{height:calc(100vh - 43px)}
+    .help{display:flex;gap:20px;justify-content:space-between;color:#657d8a;font-size:12px;line-height:1.7;margin-top:16px}.help p{margin:0;max-width:800px}.help a{white-space:nowrap}#loading{font-size:11px;color:#748993}
+    :focus-visible{outline:3px solid #e6b354;outline-offset:3px}#mobile-nav{display:none}
+    @media(max-width:1000px){.app{grid-template-columns:215px minmax(0,1fr)}main{padding:24px 20px}header{display:block}.actions{margin-top:16px}iframe{height:650px}}
+    @media(max-width:700px){.app{display:block}aside{padding:17px}.brand{font-size:18px}.brand small{display:none}#mobile-nav{display:block;margin:15px 10px 0;max-width:calc(100% - 20px);width:100%;padding:11px;border-radius:6px;background:#1c3c50;color:white;border:1px solid #476073}nav,.aside-bottom{display:none}main{padding:20px 14px}.topline{font-size:10px}header{margin-top:22px}h1{font-size:28px}iframe{height:620px}.help{display:block}.help a{display:inline-block;margin-top:10px}.viewer-top{font-size:10px;padding:11px}.actions{flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand">AdventureWorks<small>Business intelligence</small></div>
+    <select id="mobile-nav" aria-label="Choose report page"></select>
+    <nav id="navigation" aria-label="Report pages"></nav>
+    <div class="aside-bottom">Built with Power BI<br><a href="https://github.com/HoiChen-bayes/business-analysis-portfolio" target="_blank" rel="noopener noreferrer">Hoi's portfolio ↗</a></div>
+  </aside>
+  <main>
+    <div class="topline"><span>HOI CHUN CHEN / ANALYTICS PORTFOLIO</span><span class="badge" id="access-badge">Interactive report</span></div>
+    <header><div><h1 id="page-title">Sales Summary</h1><p id="description"></p></div><div class="actions"><button class="action" id="fullscreen">Full screen</button><a class="action" id="open-report" target="_blank" rel="noopener noreferrer">Open report ↗</a></div></header>
+    <section class="viewer" id="viewer" aria-label="Interactive Power BI report">
+      <div class="viewer-top"><span><i class="live-dot"></i><span id="source-page"></span></span><span id="loading" role="status">Opening Power BI…</span></div>
+      <iframe id="report-frame" title="AdventureWorks Power BI report" allowfullscreen allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </section>
+    <div class="help"><p id="access-note"></p><a href="https://github.com/HoiChen-bayes/business-analysis-portfolio" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a></div>
+  </main>
+</div>
+<script src="report-config.js"></script>
+<script>
+  'use strict';
+  const config = window.ADVENTUREWORKS_CONFIG;
+  const pages = config.pages;
+  const frame = document.getElementById('report-frame');
+  const navigation = document.getElementById('navigation');
+  const mobile = document.getElementById('mobile-nav');
+  let group = '';
+  pages.forEach((page,index)=>{
+    if(page.group!==group){group=page.group;const label=document.createElement('div');label.className='group';label.textContent=group;navigation.append(label);}
+    const button=document.createElement('button');button.className='nav-button';button.dataset.page=page.id;
+    const number=document.createElement('span');number.textContent=String(index+1).padStart(2,'0');button.append(number,document.createTextNode(page.title));
+    button.addEventListener('click',()=>{location.hash=page.id;});navigation.append(button);
+    const option=document.createElement('option');option.value=page.id;option.textContent=page.title;mobile.append(option);
+  });
+  function reportURL(page){
+    const url=new URL(config.embedUrl);
+    url.searchParams.set('pageName',page.id);
+    return url.href;
+  }
+  function showPage(){
+    const page=pages.find(p=>p.id===location.hash.slice(1))||pages[0];
+    document.getElementById('page-title').textContent=page.title;
+    document.getElementById('description').textContent=page.description;
+    document.getElementById('source-page').textContent=page.sourceName+' · '+(pages.indexOf(page)+1)+' / '+pages.length;
+    document.title=page.title+' | AdventureWorks';
+    document.querySelectorAll('.nav-button').forEach(b=>{if(b.dataset.page===page.id)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
+    mobile.value=page.id;
+    const url=reportURL(page);
+    document.getElementById('open-report').href=config.mode==='public'?url:page.sourceUrl;
+    document.getElementById('loading').textContent='Opening Power BI…';
+    frame.title=page.title+' — interactive Power BI report';
+    frame.src=url;
+  }
+  frame.addEventListener('load',()=>{document.getElementById('loading').textContent='Power BI';});
+  mobile.addEventListener('change',()=>{location.hash=mobile.value;});
+  window.addEventListener('hashchange',showPage);
+  document.getElementById('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.getElementById('viewer').requestFullscreen();}catch{document.getElementById('loading').textContent='Use Open report for a larger view';}});
+  document.getElementById('access-badge').textContent=config.mode==='public'?'Public interactive report':'Power BI sign-in required';
+  document.getElementById('access-note').textContent=config.mode==='public'?'Explore the original report: use its slicers, select data points and hover for details. Use the left navigation to open another report page. Data covers July 2017–15 June 2020; June 2020 is incomplete.':'Sign in with a Microsoft account that has permission to view this report. If the sign-in window is blocked, use Open report. Report permissions and licensing are enforced by Power BI. Data covers July 2017–15 June 2020.';
+  showPage();
+</script>
+</body>
+</html>
