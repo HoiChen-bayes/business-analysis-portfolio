@@ -34,6 +34,16 @@ Welcome to my portfolio! Here are selected projects in business analysis and dat
 
 ## Power BI
 
+### AdventureWorks Interactive Dashboard
+
+**[Open the interactive dashboard ↗](https://hoichen-bayes.github.io/business-analysis-portfolio/)**
+
+Explore 10 report pages covering sales, product portfolio, purchase affinity, costs, geographic markets and customer RFM analysis.
+
+The dashboard is hosted on GitHub Pages. The embedded Power BI report requires sign-in with an account that has report access.
+
+[Project details](ADVENTUREWORKS.md) · [Dashboard source](index.html)
+
 | Project | Tools | Description |
 | --- | --- | --- |
 | [Furniture Bundle Conversion](https://github.com/HoiChen-bayes/furniture-bundle-conversion) | Power BI, Power Query, SQL | Built reusable funnel reporting with period and product-line selection. Full-set conversion rose from about 19% to 26% after a discount change supported by the analysis. Experience summary; original dashboard not published. |
